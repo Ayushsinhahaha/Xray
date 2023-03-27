@@ -58,6 +58,7 @@ def overall():
     if request.method=="POST":
         fname=request.form.get("name")
         phone=request.form.get("phone")
+        age=request.form.get("age")
         image_file=request.files['file']
         print("image ",image_file)
         if image_file:
@@ -82,7 +83,7 @@ def overall():
             index_tensor = torch.argmax(outputs)
             index = index_tensor.item()
             print(classes[index])
-    return render_template('result.html',prediction=classes[index],fname=fname,phone=phone,xray_image=image_file.filename)
+    return render_template('result.html',prediction=classes[index],fname=fname,phone=phone,age=age,xray_image=image_file.filename)
 
 
 

@@ -42,7 +42,7 @@
       display: flex;
       justify-content: center;
       left: 350px;
-      color: rgb(90, 2, 2)
+      color: rgb(90, 2, 2);
     }
     .box {
       border: 2px solid black;
@@ -81,15 +81,23 @@
       <div class="result">
         <div class="image">
           <h2>Your X-ray Image</h2>
-          <img src="{{ url_for('static', filename='image/') }}{{xray_image}}" alt="XRay Image" width="600px" height="600px" />
+          <img
+            src="{{ url_for('static', filename='image/') }}{{xray_image}}"
+            alt="XRay Image"
+            width="600px"
+            height="600px"
+          />
         </div>
 
         <div class="prediction">
-          <h1 >Predicted Result</h1>
+          <h1>Predicted Result</h1>
           <div class="inside_prediction">
             <h2>Patient's Name:{{fname}}</h2>
+            <h2>Patient's Age:{{age}}</h2>
             <h2>Contact No:{{phone}}</h2>
-            <h2 style="color:brown;text-decoration:underline">You have : {{prediction}}</h2>
+            <h2 style="color: brown; text-decoration: underline">
+              You have : {{prediction}}
+            </h2>
           </div>
         </div>
       </div>
